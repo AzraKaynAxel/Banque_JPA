@@ -6,23 +6,23 @@
 
 **Prérequis** ✅:
 - **Code**: structure de projet Java/Maven prête.
-- **Configuration du pom.xml**: en fonction de vos besoin 
+- **Configuration du pom.xml**: en fonction de vos besoin
 - **Configuration JPA**: `persistence.xml` présent dans `src/main/resources/META-INF` (et copié dans `target/classes/META-INF` après compilation) ⚙️.
 
 
 ## Détails des étapes à réalisées 🚧
 
 ### Réalisation sur la branche *`class/CreationEntites`*
-- **1) Implémentation des classes entités** 🧩: 
-    - définition des classes abstraites
-    - classes concrètes 
-    - Chaque entité utilise des annotations JPA pour la persistance (`@Entity`, `@Inheritance`, `@Id`, etc.),
+- **1) Implémentation des classes entités** 🧩:
+  - définition des classes abstraites
+  - classes concrètes
+  - Chaque entité utilise des annotations JPA pour la persistance (`@Entity`, `@Inheritance`, `@Id`, etc.),
 
-*voir `src/main/java/fr/diginamic/entites`* 🏦. 
+*voir `src/main/java/fr/diginamic/entites`* 🏦.
 
 - **2) Test de démarrage** ▶️: ajout d'une classe de test/runner `TestBaseDeDonnees.java` qui charge l'EntityManagerFactory et effectue des opérations CRUD simples pour valider le mapping et la connexion à la base.
 
-*voir `src/main/java/fr/diginamic`* 🏦. 
+*voir `src/main/java/fr/diginamic`* 🏦.
 _____________
 
 ## Structure du dépôt (raccourci) 📂
