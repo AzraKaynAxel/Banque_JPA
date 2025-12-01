@@ -25,12 +25,10 @@ public abstract class AbstractOperation {
     /**
      * Constructor for: AbstractOperation
      *
-     * @param id
      * @param montent
      * @param motif
      */
-    public AbstractOperation(Integer id, double montent, String motif) {
-        this.id = id;
+    public AbstractOperation(double montent, String motif) {
         this.montent = montent;
         this.motif = motif;
     }

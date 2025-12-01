@@ -26,9 +26,9 @@ public abstract class AbstractCompte {
     @Column(name = "solde", nullable = false, precision = 2, scale = 10)
     private double solde;
 
-    @ManyToMany
+    @ManyToMany (mappedBy="comptes" )
     @JoinTable(name="cli_comp",
-            joinColumns=@JoinColumn(name="id_compt", referencedColumnName="id"),
+            joinColumns=@JoinColumn(name="id_compte", referencedColumnName="id"),
             inverseJoinColumns=@JoinColumn(name="id_client", referencedColumnName="id")
     )
     private Set<Client> clients;
@@ -46,6 +46,42 @@ public abstract class AbstractCompte {
     public AbstractCompte(String numero, double solde) {
         this.numero = numero;
         this.solde = solde;
+    }
+
+    /**
+     * Getter for clients
+     *
+     * @return clients
+     */
+    public Set<Client> getClients() {
+        return clients;
+    }
+
+    /**
+     * Getter for id
+     *
+     * @return id
+     */
+    public Integer getId() {
+        return id;
+    }
+
+    /**
+     * Getter for numero
+     *
+     * @return numero
+     */
+    public String getNumero() {
+        return numero;
+    }
+
+    /**
+     * Getter for solde
+     *
+     * @return solde
+     */
+    public double getSolde() {
+        return solde;
     }
 
     @Override

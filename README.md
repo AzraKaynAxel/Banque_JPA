@@ -23,6 +23,18 @@
 - **2) Test de démarrage** ▶️: ajout d'une classe de test/runner `TestBaseDeDonnees.java` qui charge l'EntityManagerFactory et effectue des opérations CRUD simples pour valider le mapping et la connexion à la base.
 
 *voir `src/main/java/fr/diginamic`* 🏦.
+
+### Réalisation sur la branche *`feature/instantiationEntites`*
+- **1) Joindre les tables** 🧩:
+  - Utilisation des annotations JoinTable
+
+*voir `src/main/java/fr/diginamic/entites`* 🏦.
+
+- **1) Insertion en BDD** 🧩:
+  - Faire un Exemple ex = new Exemple sur tout les entites
+  - Ensuite faire les perisiste en base de donnée
+
+*voir `src/main/java/fr/diginamic`* 🏦.
 _____________
 
 ## Structure du dépôt (raccourci) 📂
