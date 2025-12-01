@@ -38,8 +38,8 @@
 _____________
 
 ## Structure du dépôt (raccourci) 📂
-- **`src/main/java`**: code source Java principal, packages `fr.diginamic` et `fr.diginamic.entites`.
-- **`src/main/resources/META-INF/persistence.xml`**: configuration JPA.
+- [src/main/java](src/main/java/): code source Java principal, packages [TestBDD](src/main/java/fr/diginamic) et [Entities](src/main/java/fr/diginamic/entities/).
+- [persistence.xml](src/main/resources/META-INF/persistence.xml): configuration JPA.
 - **`target/`**: sortie de compilation (classes, resources packaging).
 - **pom.xml**: configuration Maven du projet. (pas de raccourcis pour celui-ci)
 
