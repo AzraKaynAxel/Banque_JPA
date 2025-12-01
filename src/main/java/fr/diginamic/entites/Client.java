@@ -13,6 +13,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -41,18 +42,30 @@ public class Client {
             joinColumns=@JoinColumn(name="id_client", referencedColumnName="id"),
             inverseJoinColumns=@JoinColumn(name="id_compte", referencedColumnName="id")
     )
-    private Set<AbstractCompte> comptes;
+    private Set<AbstractCompte> comptes = new HashSet<>();
 
     // Permet de faire de deux classe une seul table en base de donnée
     @Embedded
     private Adresse adresse;
 
-    public Client(String prenom, Adresse adresse, Banque banque, LocalDate dateNaissance, Integer id, String nom) {
+
+    public Client() {
+    }
+
+    /**
+     * Constructor for: Client
+     *
+     * @param prenom
+     * @param adresse
+     * @param banque
+     * @param dateNaissance
+     * @param nom
+     */
+    public Client(String prenom, Adresse adresse, Banque banque, LocalDate dateNaissance, String nom) {
         this.prenom = prenom;
         this.adresse = adresse;
         this.banque = banque;
         this.dateNaissance = dateNaissance;
-        this.id = id;
         this.nom = nom;
     }
 
