@@ -6,6 +6,9 @@ import fr.diginamic.entites.AssuranceVie;
 import fr.diginamic.entites.Banque;
 import fr.diginamic.entites.Client;
 import fr.diginamic.entites.LivretA;
+import fr.diginamic.service.AppService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -14,7 +17,19 @@ import javax.persistence.Persistence;
 import java.time.LocalDate;
 
 public class TestBaseDeDonnees {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(TestBaseDeDonnees.class);
+
     public static void main(String[] args) {
+
+        String test = "Coucou";
+        // Permet d'afficher des log en fonction de se qu'on lui demande
+        LOGGER.info("Bonjour !! L'application TestBaseDeDonnees démarre");
+
+
+        AppService appService = new AppService();
+        appService.executer(test);
+
 
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("Config1");
         EntityManager em = emf.createEntityManager();
@@ -54,6 +69,8 @@ public class TestBaseDeDonnees {
         AbstractCompte av4 = new AssuranceVie("AV004", 30500.20, LocalDate.of(2035, 1, 1), 1.55);
         AbstractCompte av5 = new AssuranceVie("AV005", 12800.00, LocalDate.of(2031, 9, 10), 1.35);
 
+
+
         // Persiste dans la base de données
         em.persist(av1);
         em.persist(av2);
@@ -70,6 +87,7 @@ public class TestBaseDeDonnees {
         AbstractCompte la5 = new LivretA("LA005", 4100.10, 3.00);
         AbstractCompte la6 = new LivretA("LA006", 9999.99, 3.00);
         AbstractCompte la7 = new LivretA("LA007", 540.20, 3.00);
+
 
         // Persiste dans la base de données
         em.persist(la1);
@@ -126,6 +144,8 @@ public class TestBaseDeDonnees {
         c9.getComptes().add(la5);
 
         transaction.commit();
+
+
 
     }
 }
